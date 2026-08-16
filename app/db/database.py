@@ -38,3 +38,18 @@ class Base(DeclarativeBase):
     Base class for all SQLAlchemy models.
     """
     pass
+
+def get_db():
+    """
+    Provides a database session to FastAPI endpoints.
+
+    The session is automatically closed after
+    the request is completed.
+    """
+
+    db = SessionLocal()
+
+    try:
+        yield db
+    finally:
+        db.close()

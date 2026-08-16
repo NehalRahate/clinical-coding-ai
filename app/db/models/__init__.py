@@ -8,6 +8,7 @@ from app.db.models.prediction import Prediction
 from app.db.models.review import Review
 
 
+
 __all__ = [
     "User",
     "Patient",
